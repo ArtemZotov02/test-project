@@ -22,7 +22,7 @@ import { useEffect, useState } from 'react';
 
 
 export default function Headers() {
-    const [modalActive, setModalActive] = useState(true);
+    const [modalActive, setModalActive] = useState(false);
     const [modalActiveTwo, setModalActiveTwo] = useState(false)
 
     const [menuOpen, setMenuOpen] = useState(false)
