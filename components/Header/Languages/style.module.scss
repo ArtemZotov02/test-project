@@ -1,0 +1,21 @@
+.languagesRow {
+    display: flex;
+    align-items: center;
+    &__btn {
+        padding: 8px 7px;
+        color: var(--gray-color) ;
+        border-radius: 3px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+    span {
+        background-color: var(--gray-bg);
+        color: var(--white);
+        pointer-events: none;
+    }
+
+}
+
+

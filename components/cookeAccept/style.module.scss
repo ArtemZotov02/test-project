@@ -1,0 +1,49 @@
+.cookieBlock{
+    display: flex;
+    align-items: center ;
+    position: fixed;
+    right: 5px;
+    bottom: 20px;
+    padding: 20px 30px;
+    border-radius: 5px;
+    border: 1px solid var(--gray-color);
+    width: 460px;
+    height: 85px;
+    background-color: var(--white-bg);
+   
+    &__text {
+        line-height: 20.8px;
+        margin-right: 20px;
+
+        a {
+            margin-left: 5px;
+            color: var(--gray-color);
+            text-decoration: underline;
+        }
+    }
+
+    button {
+        margin: 0;
+        padding: 10px 19px;
+        width: 100px;
+        color: var(--btn-color);
+        border: 2px solid var(--btn-color);
+        background-color: transparent;
+    
+    }
+}
+
+@media (max-width:900px) {
+    .cookieBlock {
+        width: 290px;
+        padding: 15px 20px;
+        &__text {
+            font-size: 0.75rem;
+            line-height: 15.6px;
+        }
+        button {
+            padding: 9px 14px;
+            font-size: 0.75rem;
+        }
+    }
+}
