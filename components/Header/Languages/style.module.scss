@@ -15,7 +15,18 @@
         color: var(--white);
         pointer-events: none;
     }
+}
 
+@media (max-width:1100px) {
+    .languagesRow {
+        position: fixed;
+        top: 515px;
+        right: -320px;
+        transition: right 0.3s ease;
+        &.active {
+            right: 130px;
+        }
+    }
 }
 
 

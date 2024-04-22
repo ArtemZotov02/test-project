@@ -18,7 +18,7 @@ import Button from '../ui/button/Button';
 import ContactForm from '../contactForm/ContactForm';
 
 //hooks
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 export default function Headers() {
@@ -34,11 +34,11 @@ export default function Headers() {
 
   return (
     <div className={style.container}>
-        <div className={style.header}>
+        <nav className={style.header}>
             <Link href='/'>
                 <Image src={logo} alt='Logo' className={style.header__logo}/>
             </Link>
-            <nav className={style.header__nav} >
+            <div className={classNames([{[style.active]:menuOpen}, style.header__nav])} >
                 <ul className={style.header__nav__list}>
                     <li>{t('common:company')}</li>
                     <li>{t('common:products')}</li>
@@ -46,9 +46,11 @@ export default function Headers() {
                     <li>{t('common:decision')}</li>
                     <li>{t('common:contacts')}</li>
                 </ul>
-            </nav>
+            </div>
             <div className={style.header__actions}>
-                <a href='tel:+0800000000'>0 (800) 00-00-00</a>
+                <a href='tel:+0800000000' className={classNames([{[style.active]:menuOpen}, style.header__actions__number])}>
+                    0 (800) 00-00-00
+                </a>
                 <Button 
                     onClick={() => {setModalActive(!modalActive), 
                     setMenuOpen(false)}}
@@ -72,28 +74,14 @@ export default function Headers() {
                     }
                 </div>
 
-                <Languages/>
+                <Languages menuOpen={menuOpen}/>
             </div>
             <div className={classNames([{[style.active]:menuOpen}, style.burgerMenu])} onClick={()=>{setMenuOpen(!menuOpen)}}>
                     <span></span>
                     <span></span>
             </div>
-            {menuOpen && (
-                <div className={style.mobileMenu}>
-                    <ul>
-                        <li>{t('common:company')}</li>
-                        <li>{t('common:products')}</li>
-                        <li>{t('common:articles')}</li>
-                        <li>{t('common:decision')}</li>
-                        <li>{t('common:contacts')}</li>
-                    </ul>
-                    <a href='tel:+0800000000'>0 (800) 00-00-00</a>
-                    <Languages/>
-                </div>
-            )}      
-        </div>
-    </div>
-    
+        </nav>
+    </div> 
   )
 }
 

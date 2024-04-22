@@ -29,8 +29,7 @@
         align-items: center;
         display: flex;
       
-
-        a {
+        &__number {
             font-weight: 700;
         }
     }
@@ -107,39 +106,48 @@
         }
     }
 }
-.mobileMenu {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--white);
-    padding: 71px 0 40px;
-    width: 320px;
-    height: 500px;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
 
-    position: fixed;
-    top: 102px;  
-    right: 0px;
-    li + li {
-        margin-top: 40px;
-    }    
-     
-    a {
-        font-weight: 500;
-        font-size: 1.2rem;
-    }
-}
 
 @media (max-width: 1100px) {
     .header {
         margin: 10px auto;
         &__nav {
-            display: none;
-        }
+            display: flex;
+            flex-direction: column;
+            background-color: var(--white);
+            padding: 71px 0 40px;
+            width: 320px;
+            height: 500px;
+            text-align: center;
+        
+            position: fixed;
+            top: 60px;  
+            right: -320px;
+            transition: right 0.3s ease;
+            ul {
+                flex-direction: column;
+                li + li {
+                    margin: 40px 0 0;
+                }   
+            }
 
-        .header__actions > *:not(.modalRow):not(.modalBtn) {
-            display: none;
+            &.active {
+                right: 0px;
+            }
+
+        }
+        &__actions {
+            &__number {
+                position: fixed;
+                top: 420px;
+                right: -320px;
+                font-weight: 500;
+                font-size: 1.2rem;  
+                transition: right 0.3s ease;
+                &.active {
+                    right: 85px;
+                }
+            }
         }
 
         & a:first-child {
@@ -150,16 +158,10 @@
     .burgerMenu {
         display: flex;
     }
-    .mobileMenu {
-        top: 60px;
-    }
 
 }
 
 @media (max-width:540px) {
-    .mobileMenu {
-        width: 100%;
-    }
     .modalBlock {
         width: 300px;
         height: auto;

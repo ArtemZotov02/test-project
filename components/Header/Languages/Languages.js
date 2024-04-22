@@ -1,9 +1,9 @@
 import React from 'react'
 import style from './style.module.scss'
 import { useRouter } from 'next/router';
+import classNames from 'classnames';
 
-
-export default function Languages() {
+export default function Languages({menuOpen}) {
 
   const { locale, locales, defaultLocale, asPath } = useRouter();
 
@@ -24,7 +24,7 @@ export default function Languages() {
   }
    
   return (
-    <div className={style.languagesRow}>
+    <div className={classNames([{[style.active]:menuOpen}, style.languagesRow])}>
         {(locales || [defaultLocale]).map(renderLocales)}
     </div>
   )
