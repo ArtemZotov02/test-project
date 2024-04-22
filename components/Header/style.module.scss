@@ -137,11 +137,19 @@
             top: 60px;  
             right: -320px;
             transition: right 0.3s ease;
-            ul {
+            &__list {
                 flex-direction: column;
-                li + li {
-                    margin: 40px 0 0;
-                }   
+                li {
+                    &:hover {
+                        font-weight: 600;
+                        &::after {
+                            display: none; 
+                        }
+                    }
+                    & + li {
+                        margin: 40px 0 0;
+                    }
+                }
             }
 
             &.active {
