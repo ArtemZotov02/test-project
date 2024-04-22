@@ -6,4 +6,7 @@
     margin: 0 40px;
     padding: 13px 29px;
     border-radius: 5px;
+    &:hover {
+        background-color: var(--gray-hover);
+    }
 }
